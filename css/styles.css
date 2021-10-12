@@ -50,14 +50,14 @@ hr.underline {
 	font-size: 65px;
 }
 
-.pure-u-1-4 .summary-row h2{
+.pure-u-5-24 .summary-row h2{
 	font-weight: 800; 
 	font-size: 30px; 
 	text-align: center;
 	margin-bottom: 5px;
 }
 
-.pure-u-1-4 .summary-row p{
+.pure-u-5-24 .summary-row p{
 	color:rgba(0, 0, 0, 0.562); 
 	text-align: center;
 	margin-top: 0px;
@@ -84,6 +84,16 @@ hr.underline {
 	position:relative; 
 	left:-100px;
 	margin-bottom: 5px;
+}
+
+.unstyled-button{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 /* #myDIV {

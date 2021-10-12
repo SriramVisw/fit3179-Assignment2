@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Ease of Access to Medical faciltites in Australia: survey",
+    "width": "container",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/Normalised_long_format_Navigating_the_healthcare.csv"
+    },
+    "transform": [
+        {
+            "calculate": "if(datum.Difficult === 'Always easy', 0, if(datum.Difficult === 'Usually easy', 1, if(datum.Difficult === 'Difficult', 2, 3)))",
+            "as": "DifficultyOrder"
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Difficult (%)",
+            "type": "quantitative",
+            "title": ""
+        },
+        "y": {
+            "field": "Age group (years)",
+            "type": "ordinal",
+            "title": "Age Group"
+        },
+        "color": {
+            "field": "Difficult",
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                    "Difficult",
+                    "Usually easy",
+                    "Always easy"
+                ],
+                "range": [
+                    "red",
+                    "gray",
+                    "lightgrey"
+                ]
+            },
+            "title": "Difficulty level"
+        },
+        "order": {
+            "field": "DifficultyOrder"
+        },
+        "tooltip": [
+            {
+                "field": "Age group (years)",
+                "type": "ordinal",
+                "title": "Age-group"
+            },
+            {
+                "field": "Difficult (%)",
+                "type": "quantitative",
+                "title": "Percentage of people"
+            }
+        ]
+    }
+}
