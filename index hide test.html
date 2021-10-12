@@ -13,6 +13,17 @@
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("expensesBreakdownDIV");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
     
   </head>
 
@@ -32,8 +43,8 @@
     <div class="pure-g">
       <div class="pure-u-1-4">
          <div class="summary-row">
-            <h2>82.9 years</h2>
-            <p>Average Life expectancy</p>
+            <h2>$98.3 billion AUD</h2>
+            <p>Est. spending 2021-22</p>
          </div>
       </div>
       <div class="pure-u-1-4">
@@ -61,40 +72,21 @@
    <div class="pure-g">
       <div class="pure-u-1">
         <div style="border:1px solid black">
-            <h2>I. Global Overview</h2>
-            <h3>Average Life expectancy</h3>
-          
-            <div class="pure-g">
-              <div class="pure-u-1-3">
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-                  Why do we use it?
-                  
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-                </p>
-              </div>
-
-              <div class="pure-u-2-3">
-                <div id="vis1" style="width: 100%; padding-left: 100px;"></div>
-              </div>
-
-            </div>
-
+            <h1>Hello</h1>
+            <button onclick="myFunction()">Try it</button>
         </div>
       </div>
     </div>
 
-
+    <div id="expensesBreakdownDIV">
       <div class="pure-g">
         <div class="pure-u-1">
           <div style="border:1px solid black">
-              <h3></h3>
+              <h1>Hello2</h1>
           </div>
         </div>
       </div>
-
+    </div>
 
     <div class="pure-g">
       <div class="pure-u-1">
@@ -103,6 +95,12 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
 
 
 
@@ -138,18 +136,6 @@
   
   </div>
   
-
-
-  <script type="text/javascript">
-    var spec = "/js/final_choropleth_map.vg.json";
-    vegaEmbed('#vis1', spec).then(function(result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-
-
-
-  </script>
 
   </body>
 </html>
