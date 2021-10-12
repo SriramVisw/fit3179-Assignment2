@@ -13,6 +13,21 @@
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("expensesBreakdownDIV");
+        var toggleButton = document.getElementById('toggleButton');
+
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          toggleButton.innerHTML = 'Hide Govt & Non-Govt Contribution';
+        } else {
+          x.style.display = "none";
+          toggleButton.innerHTML = 'Show Govt & Non-Govt Contribution';
+        }
+      }
+    </script>
     
   </head>
 
@@ -158,21 +173,55 @@
 
               <div class="pure-u-1-2">
                 <div id="vis4" style="width: 100%; padding-left: 100px; padding-top: 40px;"></div>
+                <br><br><br><br>
+                <div style="text-align: center;">
+                  <button onclick="myFunction()" id="toggleButton">Hide Govt & Non-Govt Contribution</button>
+                </div>
+                
               </div>
 
             </div>
 
         </div>
-<br><br>
+        <br><br>
         <hr class="hr-subsection">
 
-        <div class="pure-g">
-          <div class="pure-u-1">
-            <div style="border:1px solid black">
-                <h3>Government and Non-Government Contribution</h3>
+        <div id="expensesBreakdownDIV">
+          <div class="pure-g">
+            <div class="pure-u-1">
+              <div>
+                <div class="pure-g">
+                  <div class="pure-u-1">
+                    <h3>Government and Non-Government Contribution</h3>
+                  </div>
+                </div>
+
+                  <div class="pure-g">
+
+                    <div class="pure-u-2-5">
+                      <div id="vis5" style="width: 100%; padding-right: 100px; padding-bottom: 20px; padding-top: 40px;"></div>
+                    </div>
+
+                    <div class="pure-u-1-5">
+                      <p style="padding-top: 25px">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry is. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                      </p>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry is. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.
+                      </p>
+                    </div>
+      
+                    <div class="pure-u-2-5">
+                      <div id="vis6" style="width: 100%; padding-left: 100px; padding-top: 40px;"></div>
+                    </div>
+      
+                  </div>
+              </div>
             </div>
           </div>
+          <hr class="hr-subsection">
         </div>
+
 
 
 
@@ -235,20 +284,40 @@
     }).catch(console.error);
   </script>
 
-<script type="text/javascript">
-  var spec = "/js/Expenses_breakdown_budget.vg.json";
-  vegaEmbed('#vis3', spec).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <script type="text/javascript">
+    var spec = "/js/Expenses_breakdown_budget.vg.json";
+    vegaEmbed('#vis3', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 
 
-<script type="text/javascript">
-  var spec = "/js/Govt_nonGovt_piechart.vg.json";
-  vegaEmbed('#vis4', spec).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+  <script type="text/javascript">
+    var spec = "/js/Govt_nonGovt_piechart.vg.json";
+    vegaEmbed('#vis4', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    var spec = "/js/radial_chart_govt_breakup.vg.json";
+    vegaEmbed('#vis5', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+
+  <script type="text/javascript">
+    var spec = "/js/radial_chart_non_govt_breakdown.vg.json";
+    vegaEmbed('#vis6', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+
 
   </body>
 </html>

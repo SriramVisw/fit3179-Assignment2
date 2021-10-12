@@ -4,6 +4,11 @@
         "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/World%20Healthcare%20employment.csv"
     },
     "width": 500,
+    "config": {
+        "view": {
+            "strokeWidth": 0
+        }
+    },
     "title": {
         "text": "Top 20 OECD Countries with the most Healthcare workers",
         "font": "sans-serif",
