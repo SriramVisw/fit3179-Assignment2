@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
+  "title":"Total Health Spending per person",
   "config": {
     "view": {
       "strokeWidth": 0
@@ -25,7 +26,7 @@
     "y": {
       "field": "Expenditure",
       "type": "quantitative",
-      "title": "Expenditure ($M)",
+      "title": "Expenditure",
       "axis": {
         "gridDash": [10, 10]
       }
