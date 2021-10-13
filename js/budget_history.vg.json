@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "config": {
+    "view": {
+      "strokeWidth": 0
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SriramVisw/fit3179-Assignment2/main/data/budget%20history_1.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Year ",
+      "title": "Year",
+      "type": "temporal",
+      "axis": {
+        "gridDash": [10, 10]
+      }
+    },
+    "y": {
+      "field": "Expenditure",
+      "type": "quantitative",
+      "title": "Expenditure ($M)",
+      "axis": {
+        "gridDash": [10, 10]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Year ",
+        "type": "temporal",
+        "title": "Year",
+        "format": "%Y"
+      },
+      {
+        "field": "Expenditure",
+        "type": "quantitative",
+        "title": "Expenditure in Millions",
+        "format": ","
+      }
+    ]
+  }
+}
