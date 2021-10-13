@@ -80,7 +80,8 @@
       "encoding": {
         "color": {
           "field": "Life expectancy at birth",
-          "type": "quantitative"
+          "type": "quantitative",
+          "title": "Life expectancy in years"
         },
         "opacity": {
           "condition": {

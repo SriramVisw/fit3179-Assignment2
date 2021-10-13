@@ -1,9 +1,6 @@
 {
     "title": {
-        "text": "Statewise Expenditure Breakdown",
-        "font": "open sans",
-        "fontSize": 17,
-        "color": "black"
+        "text": "Statewise Expenditure Breakdown"
     },
     "width": "container",
     "view": {
@@ -69,11 +66,7 @@
                     "axis": {
                         "format": "%Y",
                         "domainColor": "white",
-                        "tickColor": "lightgray",
-                        "labelColor": "gray",
-                        "titleColor": "gray",
-                        "titleFontWeight": "bold",
-                        "titleFont": "open sans"
+                        "tickColor": "lightgray"
                     },
                     "title": ""
                 },
@@ -87,15 +80,33 @@
                             10
                         ],
                         "domainColor": "white",
-                        "tickColor": "white",
-                        "labelColor": "gray",
-                        "titleColor": "gray",
-                        "titleFontWeight": "bold",
-                        "titleFont": "open sans"
+                        "tickColor": "white"
                     }
                 },
                 "color": {
                     "field": "State",
+                    "scale":{
+                        "domain":[
+                            "NSW",
+                            "VIC",
+                            "QLD",
+                            "WA",
+                            "SA",
+                            "TAS",
+                            "ACT",
+                            "NT"
+                        ],
+                        "range":[
+                            "#e7ba52",
+                            "#1f77b4",
+                            "#aec7e8",
+                            "#c7c7c7",
+                            "#9467bd",
+                            "orange",
+                            "brown",
+                            "#d45087"
+                        ]
+                    },
                     "sort": [
                         "NSW",
                         "VIC",
@@ -106,18 +117,11 @@
                         "ACT",
                         "NT"
                     ],
-                    "scale": {
-                        "scheme": "category20b"
-                    },
+                    "type": "nominal",
+                    
                     "title": "States",
                     "legend": {
-                        "title": "States",
-                        "titleFont": "open sans",
-                        "labelFont": "open sans",
-                        "titleColor": "gray",
-                        "labelColor": "gray",
-                        "orient": "bottom",
-                        "direction": "horizontal"
+                       
                     }
                 },
                 "opacity": {
@@ -129,7 +133,7 @@
                 },
                 "order": {
                     "aggregate": "sum",
-                    "field": "Difficult",
+                    "field": "State",
                     "type": "quantitative"
                 },
                 "tooltip": [
