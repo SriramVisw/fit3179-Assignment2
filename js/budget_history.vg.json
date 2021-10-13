@@ -26,7 +26,7 @@
     "y": {
       "field": "Expenditure",
       "type": "quantitative",
-      "title": "Expenditure",
+      "title": "Expenditure (A$)",
       "axis": {
         "gridDash": [10, 10]
       }
@@ -41,7 +41,7 @@
       {
         "field": "Expenditure",
         "type": "quantitative",
-        "title": "Expenditure in Millions",
+        "title": "Expenditure in A$",
         "format": ","
       }
     ]
