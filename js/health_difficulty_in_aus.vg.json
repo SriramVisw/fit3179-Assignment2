@@ -1,10 +1,19 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "title": "Ease of Access to Medical faciltites in Australia: survey",
     "width": "container",
     "data": {
         "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/Normalised_long_format_Navigating_the_healthcare.csv"
     },
+    "selection": {
+        "selection_criteria": {
+          "type": "multi",
+          "on": "mouseover",
+          "fields": [
+            "Difficult (%)"
+          ]
+        }
+      },
     "transform": [
         {
             "calculate": "if(datum.Difficult === 'Always easy', 0, if(datum.Difficult === 'Usually easy', 1, if(datum.Difficult === 'Difficult', 2, 3)))",
@@ -23,6 +32,13 @@
             "type": "ordinal",
             "title": "Age Group"
         },
+        "opacity": {
+            "condition": {
+              "selection": "selection_criteria",
+              "value": 1
+            },
+            "value": 0.3
+          },
         "color": {
             "field": "Difficult",
             "type": "nominal",
@@ -34,7 +50,7 @@
                 ],
                 "range": [
                     "red",
-                    "gray",
+                    "#a6a6a6",
                     "lightgrey"
                 ]
             },
