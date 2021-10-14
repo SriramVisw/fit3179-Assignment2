@@ -20,7 +20,7 @@ h4 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 15px;
-  margin-left: 40px;
+  margin-left: 20px;
   color: #ffffff;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -107,11 +107,3 @@ hr.underline {
 .unstyled-button:hover {
   text-decoration: underline;
 }
-
-/* #myDIV {
-	width: 100%;
-	padding: 50px 0;
-	text-align: center;
-	background-color: lightblue;
-	margin-top: 20px;
-  } */

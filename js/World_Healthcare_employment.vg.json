@@ -3,15 +3,34 @@
     "data": {
         "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/World%20Healthcare%20employment.csv"
     },
-    "width": 500,
+    "width": "container",
+    "height": 400,
     "config": {
         "view": {
             "strokeWidth": 0
         }
     },
     "title": {
-        "text": "Top 20 OECD Countries with the most Healthcare workers"
+        "text": "OECD Countries with the most Healthcare workers"
     },
+    "params": [
+        {
+            "name": "Rank_Above",
+            "value": 15,
+            "bind": {
+                "input": "range",
+                "min": 10,
+                "max": 19,
+                "step": 1,
+                "name": "Number of Countries to compare: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.Rank <= Rank_Above"
+        }
+    ],
     "encoding": {
         "x": {
             "field": "Employment Density",
@@ -41,20 +60,52 @@
             }
         },
         "color": {
-            "condition": {
-                "param": "hover",
-                "field": "Country",
-                "type": "nominal",
-                "legend": null
-            },
-            "value": "grey"
-        },
-        "opacity": {
-            "condition": {
-                "param": "hover",
-                "value": 1
-            },
-            "value": 0.6
+            "legend": null,
+            "field": "Country",
+            "scale": {
+                "domain": [
+                    "Norway",
+                    "Denmark",
+                    "Sweden",
+                    "Netherlands",
+                    "Switzerland",
+                    "Luxembourg",
+                    "Finland",
+                    "Germany",
+                    "Australia",
+                    "Japan",
+                    "United States",
+                    "Iceland",
+                    "United Kingdom",
+                    "Canada",
+                    "France",
+                    "Belgium",
+                    "New Zealand",
+                    "Ireland",
+                    "Austria"
+                ],
+                "range": [
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "#1663be",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray",
+                    "gray"
+                ]
+            }
         },
         "tooltip": [
             {
@@ -70,31 +121,6 @@
         ]
     },
     "layer": [
-        {
-            "description": "transparent layer to make it easier to trigger selection",
-            "params": [
-                {
-                    "name": "hover",
-                    "value": [
-                        {
-                            "Country": "Australia"
-                        }
-                    ],
-                    "select": {
-                        "type": "point",
-                        "fields": [
-                            "Country"
-                        ],
-                        "on": "mouseclick"
-                    }
-                }
-            ],
-            "mark": {
-                "type": "bar",
-                "strokeWidth": 8,
-                "stroke": "transparent"
-            }
-        },
         {
             "mark": "bar"
         },
