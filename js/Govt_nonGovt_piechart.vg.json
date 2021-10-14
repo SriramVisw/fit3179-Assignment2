@@ -11,27 +11,7 @@
             "strokeWidth": 0
         }
     },
-    "params": [
-        {
-            "name": "Source_highlight",
-            "select": {
-                "type": "point",
-                "fields": [
-                    "Source of Funds"
-                ]
-            },
-            "bind": "legend"
-        }
-    ],
-    "mark": "arc",
     "encoding": {
-        "opacity": {
-            "condition": {
-                "param": "Source_highlight",
-                "value": 1
-            },
-            "value": 0.2
-        },
         "theta": {
             "field": "Expenditure",
             "type": "quantitative"
@@ -68,5 +48,27 @@
                 "title": "Percentage of Contribution"
             }
         ]
-    }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "outerRadius": 80
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "radius": -105,
+                "fontSize": 14,
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "text": {
+                    "field": "Contribution",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
 }
