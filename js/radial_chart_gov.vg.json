@@ -1,14 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Government Funding break up",
-    "width": "container",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/govt%20split.csv"
+    },
     "config": {
         "view": {
             "strokeWidth": 0
         }
-    },
-    "data": {
-        "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/govt%20split.csv"
     },
     "params": [
         {

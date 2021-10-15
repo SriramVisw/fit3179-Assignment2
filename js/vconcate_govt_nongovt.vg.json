@@ -1,0 +1,149 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "params": [
+        {
+            "name": "Expenditure_highlight",
+            "select": {
+                "type": "point",
+                "fields": [
+                    "Area of Expenditure"
+                ]
+            },
+            "bind": "legend"
+        }
+    ],
+    "config": {
+        "view": {
+            "strokeWidth": 0
+        }
+    },
+    "hconcat": [
+        {
+            "width": 400,
+            "title": "Government Funding break up",
+            "layer": [
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/govt%20split.csv"
+                    },
+                    "mark": {
+                        "type": "arc",
+                        "innerRadius": 20,
+                        "stroke": "#ffffff"
+                    }
+                }
+            ],
+            "encoding": {
+                "opacity": {
+                    "condition": {
+                        "param": "Expenditure_highlight",
+                        "value": 1
+                    },
+                    "value": 0.2
+                },
+                "color": {
+                    "field": "Area of Expenditure",
+                    "scale": {
+                        "domain": [
+                            "Hospitals",
+                            "Other Services",
+                            "Primary Health care",
+                            "Referred Medical services",
+                            "Research",
+                            "Capital Expenditure"
+                        ],
+                        "range": [
+                            "#003f5c",
+                            "lightgray",
+                            "orange",
+                            "#ff7c43",
+                            "#007d79",
+                            "#82cfff"
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Area of Expenditure",
+                        "type": "nominal",
+                        "title": "Area of Expenditure"
+                    },
+                    {
+                        "field": "Expenditure",
+                        "type": "quantitative",
+                        "title": "Expenditure in Millions",
+                        "format": ","
+                    }
+                ],
+                "theta": {
+                    "field": "Expenditure",
+                    "type": "quantitative",
+                    "stack": true
+                }
+            }
+        },
+        {
+            "title": "Non-Government Funding break up",
+            "layer": [
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/non%20govt%20split.csv"
+                    },
+                    "mark": {
+                        "type": "arc",
+                        "innerRadius": 20,
+                        "stroke": "#ffffff"
+                    }
+                }
+            ],
+            "encoding": {
+                "opacity": {
+                    "condition": {
+                        "param": "Expenditure_highlight",
+                        "value": 1
+                    },
+                    "value": 0.2
+                },
+                "color": {
+                    "field": "Area of Expenditure",
+                    "scale": {
+                        "domain": [
+                            "Hospitals",
+                            "Other Services",
+                            "Primary Health care",
+                            "Referred Medical services",
+                            "Research",
+                            "Capital Expenditure"
+                        ],
+                        "range": [
+                            "#003f5c",
+                            "lightgray",
+                            "orange",
+                            "#ff7c43",
+                            "#007d79",
+                            "#82cfff"
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Area of Expenditure",
+                        "type": "nominal",
+                        "title": "Area of Expenditure"
+                    },
+                    {
+                        "field": "Expenditure",
+                        "type": "quantitative",
+                        "title": "Expenditure in Millions",
+                        "format": ","
+                    }
+                ],
+                "theta": {
+                    "field": "Expenditure",
+                    "type": "quantitative",
+                    "stack": true
+                }
+            }
+        }
+    ]
+}
