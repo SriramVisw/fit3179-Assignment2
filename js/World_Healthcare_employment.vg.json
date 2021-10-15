@@ -35,7 +35,6 @@
         "x": {
             "field": "Employment Density",
             "type": "quantitative",
-            "title": "Employment Density per 1000 people",
             "axis": {
                 "gridDash": [
                     10,
@@ -44,7 +43,9 @@
                 "domainColor": "white",
                 "tickColor": "white",
                 "labelColor": "black",
-                "titleColor": "black"
+                "titleColor": "black",
+                "values": [],
+                "title": null
             }
         },
         "y": {
@@ -127,7 +128,6 @@
         {
             "mark": {
                 "type": "text",
-                "font": "sans-serif",
                 "fontWeight": "bold",
                 "align": "left",
                 "baseline": "middle",
@@ -137,6 +137,30 @@
                 "text": {
                     "field": "Employment Density",
                     "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "calculate": "datum.Country + ' ranks 8th '",
+                    "as": "anno"
+                },
+                {
+                    "filter": "datum.Country == 'Australia'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "dx": -60
+            },
+            "encoding": {
+                "text": {
+                    "field": "anno",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "white"
                 }
             }
         }

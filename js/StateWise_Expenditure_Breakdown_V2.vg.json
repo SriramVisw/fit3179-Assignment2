@@ -1,0 +1,259 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/Australia_Health_Budget_Area_chart1.csv"
+    },
+    "params": [
+        {
+            "name": "state_selection",
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "ACT",
+                    "VIC",
+                    "NSW",
+                    "TAS",
+                    "QLD",
+                    "WA",
+                    "SA"
+                ],
+                "labels": [
+                    "Show All",
+                    "ACT",
+                    "VIC",
+                    "NSW",
+                    "TAS",
+                    "QLD",
+                    "WA",
+                    "SA"
+                ],
+                "name": "Select State: "
+            }
+        }
+    ],
+    "vconcat": [
+        {
+            "title": {
+                "text": "Statewise Expenditure Breakdown"
+            },
+            "width": "container",
+            "view": {
+                "strokeWidth": 0
+            },
+            "transform": [
+                {
+                    "filter": "state_selection == null || datum.State == state_selection"
+                }
+            ],
+            "layer": [
+                {
+                    "mark": "area",
+                    "params": [
+                        {
+                            "name": "state_highlight",
+                            "select": {
+                                "type": "point",
+                                "fields": [
+                                    "State"
+                                ]
+                            },
+                            "bind": "legend"
+                        }
+                    ],
+                    "encoding": {
+                        "x": {
+                            "timeUnit": "year",
+                            "field": "Year",
+                            "scale": {
+                                "domain": {
+                                    "param": "brush"
+                                }
+                            },
+                            "axis": {
+                                "format": "%Y",
+                                "domainColor": "white",
+                                "tickColor": "lightgray"
+                            },
+                            "title": ""
+                        },
+                        "y": {
+                            "aggregate": "sum",
+                            "field": "Expenditure",
+                            "title": "Expenditure ($M)",
+                            "axis": {
+                                "gridDash": [
+                                    10,
+                                    10
+                                ],
+                                "domainColor": "white",
+                                "tickColor": "white"
+                            }
+                        },
+                        "color": {
+                            "field": "State",
+                            "scale": {
+                                "domain": [
+                                    "NSW",
+                                    "VIC",
+                                    "QLD",
+                                    "WA",
+                                    "SA",
+                                    "TAS",
+                                    "ACT",
+                                    "NT"
+                                ],
+                                "range": [
+                                    "#e7ba52",
+                                    "#1f77b4",
+                                    "#aec7e8",
+                                    "#c7c7c7",
+                                    "#9467bd",
+                                    "orange",
+                                    "brown",
+                                    "#d45087"
+                                ]
+                            },
+                            "sort": [
+                                "NSW",
+                                "VIC",
+                                "QLD",
+                                "WA",
+                                "SA",
+                                "TAS",
+                                "ACT",
+                                "NT"
+                            ],
+                            "type": "nominal",
+                            "title": "States",
+                            "legend": {}
+                        },
+                        "opacity": {
+                            "condition": {
+                                "param": "state_highlight",
+                                "value": 1
+                            },
+                            "value": 0.2
+                        },
+                        "order": {
+                            "aggregate": "sum",
+                            "field": "State",
+                            "type": "quantitative"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Year",
+                                "type": "temporal",
+                                "title": "Year",
+                                "format": "%Y"
+                            },
+                            {
+                                "field": "State",
+                                "type": "nominal",
+                                "title": "State"
+                            },
+                            {
+                                "field": "Expenditure",
+                                "type": "quantitative",
+                                "title": "Expenditure in Millions",
+                                "format": ","
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "width": "container",
+            "height": 60,
+            "view": {
+                "strokeWidth": 0
+            },
+            "transform": [
+                {
+                    "filter": "state_selection == null || datum.State == state_selection"
+                }
+            ],
+            "mark": "area",
+            "params": [
+                {
+                    "name": "brush",
+                    "select": {
+                        "type": "interval",
+                        "encodings": [
+                            "x"
+                        ]
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "timeUnit": "year",
+                    "field": "Year",
+                    "axis": {
+                        "format": "%Y",
+                        "domainColor": "white",
+                        "tickColor": "lightgray"
+                    },
+                    "title": "Year"
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "Expenditure",
+                    "title": "Expenditure ($M)",
+                    "axis": {
+                        "gridDash": [
+                            10,
+                            10
+                        ],
+                        "domainColor": "white",
+                        "tickColor": "white"
+                    }
+                },
+                "color": {
+                    "field": "State",
+                    "scale": {
+                        "domain": [
+                            "NSW",
+                            "VIC",
+                            "QLD",
+                            "WA",
+                            "SA",
+                            "TAS",
+                            "ACT",
+                            "NT"
+                        ],
+                        "range": [
+                            "#e7ba52",
+                            "#1f77b4",
+                            "#aec7e8",
+                            "#c7c7c7",
+                            "#9467bd",
+                            "orange",
+                            "brown",
+                            "#d45087"
+                        ]
+                    },
+                    "sort": [
+                        "NSW",
+                        "VIC",
+                        "QLD",
+                        "WA",
+                        "SA",
+                        "TAS",
+                        "ACT",
+                        "NT"
+                    ],
+                    "type": "nominal",
+                    "title": "States",
+                    "legend": {}
+                },
+                "order": {
+                    "aggregate": "sum",
+                    "field": "State",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
+}

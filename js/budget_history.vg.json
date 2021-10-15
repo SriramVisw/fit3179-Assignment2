@@ -19,7 +19,7 @@
         "min": 4500,
         "max": 7300,
         "step": 400,
-        "name": "Expenditure Range in A$: "
+        "name": "Minimum Expenditure Range to compare in A$: "
       }
     }
   ],
