@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 300,
     "data": {
-        "url": " https://raw.githubusercontent.com/SriramVisw/fit3179-Assignment2/main/data/ratio_tax_health_2.csv"
+        "url": " https://raw.githubusercontent.com/SriramVisw/fit3179-Assignment2/main/data/ratio_tax_health_1.csv"
     },
     "mark": "bar",
     "encoding": {
