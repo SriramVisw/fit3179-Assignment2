@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 300,
+    "data": {
+        "url": " https://raw.githubusercontent.com/SriramVisw/fit3179-Assignment2/main/data/ratio_tax_health_2.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "column": {
+            "field": "Year",
+            "type": "nominal",
+            "spacing": 10,
+            "header": {
+                "orient": "bottom"
+            }
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "Amount",
+            "title": "Amount in A$",
+            "axis": {
+                "gridDash": [
+                    10,
+                    10
+                ]
+            }
+        },
+        "x": {
+            "field": "Type",
+            "axis": null
+        },
+        "color": {
+            "field": "Type",
+            "scale": {
+                "range": [
+                    "#675193",
+                    "#ca8861"
+                ]
+            },
+            "legend": {
+                "title": "Category"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Type",
+                "type": "nominal",
+                "title": "Category"
+            },
+            {
+                "field": "Year",
+                "title": "Year"
+            },
+            {
+                "field": "Amount",
+                "type": "quantitative",
+                "title": "Amount in Millions",
+                "format": ","
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "domainWidth": 1
+        }
+    }
+}
