@@ -41,8 +41,8 @@
         },
         "color": {
             "field": "Area of Expenditure",
-            "scale":{
-                "domain":[
+            "scale": {
+                "domain": [
                     "Hospitals",
                     "Other Services",
                     "Primary Health care",
@@ -50,7 +50,7 @@
                     "Research",
                     "Capital Expenditure"
                 ],
-                "range":[
+                "range": [
                     "#003f5c",
                     "lightgray",
                     "orange",
@@ -77,14 +77,6 @@
             "field": "Expenditure",
             "type": "quantitative",
             "stack": true
-        },
-        "radius": {
-            "field": "Expenditure",
-            "scale": {
-                "type": "sqrt",
-                "zero": true,
-                "rangeMin": 20
-            }
         }
     }
 }
