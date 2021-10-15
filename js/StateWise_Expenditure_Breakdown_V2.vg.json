@@ -37,7 +37,7 @@
             "title": {
                 "text": "Statewise Expenditure Breakdown"
             },
-            "width": 570,
+            "width": 590,
             "view": {
                 "strokeWidth": 0
             },
@@ -164,7 +164,7 @@
             ]
         },
         {
-            "width": 570,
+            "width": 590,
             "height": 60,
             "view": {
                 "strokeWidth": 0
