@@ -85,8 +85,8 @@
                 },
                 "color": {
                     "field": "State",
-                    "scale":{
-                        "domain":[
+                    "scale": {
+                        "domain": [
                             "NSW",
                             "VIC",
                             "QLD",
@@ -96,7 +96,7 @@
                             "ACT",
                             "NT"
                         ],
-                        "range":[
+                        "range": [
                             "#e7ba52",
                             "#1f77b4",
                             "#aec7e8",
@@ -118,11 +118,8 @@
                         "NT"
                     ],
                     "type": "nominal",
-                    
                     "title": "States",
-                    "legend": {
-                       
-                    }
+                    "legend": {}
                 },
                 "opacity": {
                     "condition": {
@@ -158,17 +155,26 @@
             }
         },
         {
+            "transform": [
+                {
+                    "calculate": "datum.State + ' has the highest expenditure and population '",
+                    "as": "anno"
+                },
+                {
+                    "filter": "datum.Year == 1199145600000"
+                }
+            ],
             "mark": {
                 "type": "text",
                 "align": "right",
                 "baseline": "middle",
-                "fontSize": 8,
-                "dx": 20,
+                "fontSize": 10,
+                "dx": 110,
                 "dy": 80
             },
             "encoding": {
                 "text": {
-                    "field": "State",
+                    "field": "anno",
                     "type": "nominal"
                 },
                 "color": {
@@ -177,32 +183,6 @@
                 "opacity": {
                     "condition": {
                         "test": "datum['State'] == 'NSW'",
-                        "value": 1
-                    },
-                    "value": 0
-                }
-            }
-        },
-        {
-            "mark": {
-                "type": "text",
-                "align": "right",
-                "baseline": "middle",
-                "fontSize": 8,
-                "dx": 15,
-                "dy": 30
-            },
-            "encoding": {
-                "text": {
-                    "field": "State",
-                    "type": "nominal"
-                },
-                "color": {
-                    "value": "white"
-                },
-                "opacity": {
-                    "condition": {
-                        "test": "datum['State'] == 'VIC'",
                         "value": 1
                     },
                     "value": 0
