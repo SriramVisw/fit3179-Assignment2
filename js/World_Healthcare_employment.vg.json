@@ -11,7 +11,7 @@
         }
     },
     "title": {
-        "text": "OECD Countries with the most Healthcare workers"
+        "text": "OECD Countries with the most Healthcare workers per 1000 people"
     },
     "params": [
         {
@@ -151,6 +151,8 @@
                 }
             ],
             "mark": {
+                "fontStyle": "italic",
+                "fontWeight": "bold",
                 "type": "text",
                 "dx": -60
             },

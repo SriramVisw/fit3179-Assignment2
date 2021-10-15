@@ -1,6 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 300,
+    "title": {
+        "text": "Tax Revenue & Healthcare Expenditure",
+        "anchor": "middle"
+    },
     "data": {
         "url": " https://raw.githubusercontent.com/SriramVisw/fit3179-Assignment2/main/data/ratio_tax_health_1.csv"
     },
