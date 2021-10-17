@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 300,
+    "height": 200,
     "title": {
         "text": "Tax Revenue & Healthcare Expenditure",
         "anchor": "middle"
