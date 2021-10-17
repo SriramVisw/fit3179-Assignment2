@@ -35,9 +35,9 @@
     "vconcat": [
         {
             "title": {
-                "text": "Statewise Expenditure Breakdown"
+                "text": "Expenditure Comparison"
             },
-            "width": 590,
+            "width": 580,
             "view": {
                 "strokeWidth": 0
             },
@@ -164,7 +164,7 @@
             ]
         },
         {
-            "width": 590,
+            "width": 580,
             "height": 60,
             "view": {
                 "strokeWidth": 0
