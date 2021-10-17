@@ -75,13 +75,34 @@
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": ""
+        "stroke": "#15649d"
       },
       "encoding": {
         "color": {
           "field": "Life expectancy at birth",
           "type": "quantitative",
-          "title": "Life expectancy in years"
+          "title": "Life expectancy in years",
+          "scale": {
+            "type": "threshold",
+            "domain": [
+              50,
+              56,
+              62,
+              68,
+              74,
+              80,
+              86
+            ],
+            "range": [
+              "#f3faff",
+              "#cfebfd",
+              "#b3e5fc",
+              "#81d4fa",
+              "#58ace8",
+              "#3672b6",
+              "#295589"
+            ]
+          }
         },
         "opacity": {
           "condition": {
