@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "title": "Ease of Access to Medical Faciltites",
-    "width": "container",
+    "width": 500,
     "height": 180,
     "data": {
         "url": "https://raw.githubusercontent.com/SriramVisw/week-10-hw/master/data/Normalised_long_format_Navigating_the_healthcare.csv"
